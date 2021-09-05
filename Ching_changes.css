@@ -1,0 +1,25 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+h1 {
+    text-align:center;
+}
+
+h3 {
+    text-align:center;
+}
+
+div {
+    font-size: 30px;
+    text-align: center;
+}
+
+
+
+
+
+
+
