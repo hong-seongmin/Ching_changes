@@ -31,12 +31,12 @@ var list_source_meaning = [
 var dic_num_gwae = { "111":"乾", "011":"兌", "101":"離", "001":"震", "110":"巽", "010":"坎", "100":"艮", "000":"坤" }//번호와 괘 매치시킨 딕셔너리
 var dic_gwae_sound = { "乾":"건", "兌":"태", "離":"이", "震":"진", "巽":"손", "坎":"감", "艮":"간", "坤":"곤" }//괘와 음 매치시킨 딕셔너리
 var dic_sound_meaning = { "건":"天", "태":"澤", "이":"火", "진":"雷", "손":"風", "감":"水", "간":"山", "곤":"地" }//음 의미 매치시킨 딕셔너리
-
+var dic_meaing_meaning = { "天":"하늘", "澤":"연못", "火":"불", "雷":"천둥", "風":"바람", "水":"물", "山":"산", "地":"땅" }
 
 function change_img_main_top(){//상괘 변경 함수
   var gwae_top_change = event.target.alt.split(".png")[0].split("_")[2]//지금 클릭 이미지의 설명 중 상괘 부분
   var gwae_bottom_change = document.getElementById("id_img_main").alt.split(".png")[0].split("_")[2].slice(3, 6)//지금 메인 이미지의 설명 중 하괘부분
-  
+  console.log(gwae_top_change)
   // if (gwae_bottom_change === "999"){//시작버튼 안누름
   //   alert("미시작")
   //   return
@@ -50,7 +50,11 @@ function change_img_main_top(){//상괘 변경 함수
   document.getElementById("id_img_mean_top").src = folder_source_meaning + meaning_change//상괘 의미 이미지 변경
   document.getElementById("id_img_mean_top").alt = meaning_change
 
-  document.getElementById("id_mean_top_gwae").textContent = document.getElementById("id_img_main").alt.split(".png")[0].split("_")[1]
+  gwae_now = dic_num_gwae[gwae_top_change]
+  sound_now = dic_gwae_sound[gwae_now]
+  meaning_now = dic_sound_meaning[sound_now]
+  meansound_now = dic_meaing_meaning[meaning_now]
+  document.getElementById("id_mean_top_gwae").textContent = `${gwae_now}[${sound_now}] : ${meaning_now}(${meansound_now})`
   return
 }
 
@@ -69,7 +73,11 @@ function change_img_main_bottom(){//하괘 변경 함수
   document.getElementById("id_img_mean_bottom").src = folder_source_meaning + meaning_change//하괘 의미 이미지 변경
   document.getElementById("id_img_mean_bottom").alt = meaning_change
 
-  document.getElementById("id_mean_bottom_gwae").textContent = document.getElementById("id_img_main").alt.split(".png")[0].split("_")[1]
+  gwae_now = dic_num_gwae[gwae_top_change]
+  sound_now = dic_gwae_sound[gwae_now]
+  meaning_now = dic_sound_meaning[sound_now]
+  meansound_now = dic_meaing_meaning[meaning_now]
+  document.getElementById("id_mean_top_gwae").textContent = `${gwae_now}[${sound_now}] : ${meaning_now}(${meansound_now})`
   return
 }
 
