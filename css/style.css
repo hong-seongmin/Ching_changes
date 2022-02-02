@@ -1,0 +1,44 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+h1 {
+    text-align:center;
+}
+
+h3 {
+    text-align:center;
+}
+
+.class_img_gwae{
+    font-size: 30px;
+    text-align: center;
+}
+
+.float_left{
+    float:left;
+    margin-right:5px
+}
+
+.class_div_meaning{
+    height:200px;
+}
+
+.width50{
+    width: 50%;
+}
+.width50_left{
+    float:left;
+}
+.width50_right{
+    float:right;
+}
+
+.class_gwae_title{
+    font-weight: bold;
+    font-size: 12;
+}
+
+
