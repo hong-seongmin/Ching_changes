@@ -37,10 +37,10 @@ function change_img_main_top(){//상괘 변경 함수
   var gwae_top_change = event.target.alt.split(".png")[0].split("_")[2]//지금 클릭 이미지의 설명 중 상괘 부분
   var gwae_bottom_change = document.getElementById("id_img_main").alt.split(".png")[0].split("_")[2].slice(3, 6)//지금 메인 이미지의 설명 중 하괘부분
 
-  // if (gwae_bottom_change === "999"){//시작버튼 안누름
-  //   alert("미시작")
-  //   return
-  // }
+  if (gwae_bottom_change === "999"){//시작버튼 안누름
+    alert("미시작")
+    return
+  }
   var gwae_main_change = list_source_gwae_64.filter(change_gwae => change_gwae.includes(gwae_top_change + gwae_bottom_change))[0]
   document.getElementById("id_img_main").src = folder_source_gwae + gwae_main_change//상괘를 변경하여 main img 변경
   document.getElementById("id_img_main").alt = gwae_main_change
